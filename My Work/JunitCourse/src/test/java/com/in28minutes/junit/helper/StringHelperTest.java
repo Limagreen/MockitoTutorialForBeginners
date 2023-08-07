@@ -8,6 +8,10 @@ public class StringHelperTest {
 
 	private StringHelper helper = new StringHelper();
 	
+	
+	/** Section: truncateAInFirst2Positions()
+	 * // AACD => CD, ACD => CD, CDEF => CDEF, CDAA => CDAA
+	*/
 	@Test
 	public void testTruncateAInFirst2Positions_AInFirst2Positions() {
 		
@@ -32,4 +36,23 @@ public class StringHelperTest {
 	public void testTruncateAInFirst2Positions_AInLast2Positions() {
 		assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
 	}
+	
+	/** Section: areFirstAndLastTwoCharactersTheSame()
+	 * ABCD => false, ABAB => true, AB => true, A => false 
+	*/
+	@Test
+	public void testAreFirstAndLastTwoCharactersTheSame_AllLettersAreDifferent() {
+		assertFalse("Condition Failed", helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+	}
+	
+	@Test
+	public void testAreFirstAndLastTwoCharactersTheSame_TrueWith4Letters() {
+		assertTrue(helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
+	}
+	
+	@Test
+	public void testAreFirstAndLastTwoCharactersTheSame_TrueWith2Letters() {
+		assertTrue(helper.areFirstAndLastTwoCharactersTheSame("AB"));
+	}
+
 }
