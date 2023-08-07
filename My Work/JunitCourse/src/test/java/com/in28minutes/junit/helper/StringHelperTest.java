@@ -6,9 +6,15 @@ import org.junit.Test;
 
 public class StringHelperTest {
 
+	private StringHelper helper = new StringHelper();
+	
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		
+		String expected = "CD";
+		String actual = helper.truncateAInFirst2Positions("AACD");
+		
+		assertEquals(expected, actual);
 	}
 
 }
