@@ -9,7 +9,7 @@ public class StringHelperTest {
 	private StringHelper helper = new StringHelper();
 	
 	@Test
-	public void testTruncateAInFirst2Positions_AInFirst2Positions () {
+	public void testTruncateAInFirst2Positions_AInFirst2Positions() {
 		
 		// variables instead of inline arguments for demonstrative purposes
 		String expected = "CD";
@@ -19,7 +19,17 @@ public class StringHelperTest {
 	}
 
 	@Test
-	public void testTruncateAInFirst2Positions_AInFirstPosition () {
+	public void testTruncateAInFirst2Positions_AInFirstPosition() {
 		assertEquals("CD", helper.truncateAInFirst2Positions("ACD"));
+	}
+	
+	@Test
+	public void testTruncateAInFirst2Positions_NoA() {
+		assertEquals("CDEF", helper.truncateAInFirst2Positions("CDEF"));
+	}
+	
+	@Test
+	public void testTruncateAInFirst2Positions_AInLast2Positions() {
+		assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
 	}
 }
