@@ -2,12 +2,18 @@ package com.in28minutes.junit.helper;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class StringHelperTest {
 
 	private StringHelper helper = new StringHelper();
 	
+	@Before
+	public void setup() {
+		helper = new StringHelper(); // overkill, because we're not storing anything in this object
+	}
 	
 	/** Section: truncateAInFirst2Positions()
 	 * // AACD => CD, ACD => CD, CDEF => CDEF, CDAA => CDAA
