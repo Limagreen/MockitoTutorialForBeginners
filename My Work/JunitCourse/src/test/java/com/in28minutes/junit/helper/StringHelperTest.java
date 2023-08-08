@@ -10,11 +10,6 @@ public class StringHelperTest {
 
 	private StringHelper helper = new StringHelper();
 	
-	@Before
-	public void setup() {
-		helper = new StringHelper(); // overkill, because we're not storing anything in this object
-	}
-	
 	/** Section: truncateAInFirst2Positions()
 	 * // AACD => CD, ACD => CD, CDEF => CDEF, CDAA => CDAA
 	*/
