@@ -2,6 +2,7 @@ package com.in28minutes.business;
 
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -54,6 +55,16 @@ public class ListTest {
 		
 		when(mockList.get(anyInt())).thenThrow(new RuntimeException("Something"));
 		mockList.get(0);
+	}
+	
+	// self-practice
+	@Test
+	public void testListIndexOfMethod() {
+		
+		when(mockList.indexOf(anyString())).thenReturn(1);
+		assertEquals(1, mockList.indexOf("Hello"));
+		assertEquals(1, mockList.indexOf("Hola"));
+		assertEquals(1, mockList.indexOf("Bonjour"));
 	}
 
 }
