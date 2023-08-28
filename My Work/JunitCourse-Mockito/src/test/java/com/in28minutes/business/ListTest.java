@@ -1,8 +1,10 @@
 package com.in28minutes.business;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -13,7 +15,7 @@ import org.junit.Test;
 
 public class ListTest {
 	
-	List mockList;
+	List<String> mockList;
 	
 	@Before
 	public void init() {
@@ -40,6 +42,19 @@ public class ListTest {
 		
 		when(mockList.get(0)).thenReturn("in28Minutes");
 		assertEquals("in28Minutes", mockList.get(0));
+	}
+	
+	@Test
+	public void testListGetMethod_UsingBDDMockito() {
+		
+		// Given
+		given(mockList.get(anyInt())).willReturn("in28Minutes");
+		
+		// When
+		String firstElement = mockList.get(0);
+		
+		// Then
+		assertThat(firstElement, is("in28Minutes"));
 	}
 	
 	@Test
