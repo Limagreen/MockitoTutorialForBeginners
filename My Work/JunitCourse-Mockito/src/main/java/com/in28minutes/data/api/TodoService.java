@@ -6,4 +6,6 @@ import java.util.List;
 public interface TodoService {
 	// for the purposes of this work, we pretend retrieveTodos fetches data from an API
 	public List<String> retrieveTodos(String user);
+	
+	public void deleteTodo(String todo);
 }

@@ -11,5 +11,10 @@ public class TodoServiceStub implements TodoService {
 		// Arrays.asList() lets us build out an array and then convert it into a list
 		return Arrays.asList("Learn Spring MVC", "Learn Spring", "Learn to Dance");
 	}
+
+	public void deleteTodo(String todo) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
