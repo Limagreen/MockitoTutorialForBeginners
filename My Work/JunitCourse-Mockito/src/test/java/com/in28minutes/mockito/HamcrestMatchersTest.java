@@ -10,6 +10,8 @@ package com.in28minutes.mockito;
 //import static org.hamcrest.Matchers.isEmptyOrNullString;
 //import static org.hamcrest.Matchers.isEmptyString;
 //import static org.hamcrest.Matchers.lessThan;
+
+//import all static methods from the Matchers class, as opposed to one by one like above
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
